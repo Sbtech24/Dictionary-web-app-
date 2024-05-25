@@ -1,0 +1,24 @@
+.input-box{
+   background-image: url('/Dictionary-web-app/src/assets/icon-search.svg');
+   background-color: rgb(240, 240, 240);
+   /* opacity: 0.5; */
+   border: none;
+   color: black;
+   margin: 0 auto;
+   
+}
+span{
+    color: #7e4caf;
+}
+
+p{
+    color: #bebebe;
+}
+ul li{
+    margin-left: 2em;
+    list-style:inside;
+    
+}
+li::marker{
+    color:#7e4caf
+}
