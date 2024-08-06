@@ -2,11 +2,12 @@ import { useContext, useState } from "react"
 
 
 import "./Header.css"
+import { ThemeContext } from "./ThemeContext"
+
 
 
 export default function Header({logo,arrow,moon}){
-   
-
+    const {toggleTheme} = useContext(ThemeContext)
     return(
         <header className="pb-5 mt-3">
             <div className="flex justify-between items-center ">
@@ -21,7 +22,7 @@ export default function Header({logo,arrow,moon}){
                     <option value="Poppins">Poppins</option>
                 </select>
             </div> */}
-            <img src={moon} alt="" />
+            <img src={moon} onClick={toggleTheme} alt="" />
         </div>
         </div>
         </header>
