@@ -9,7 +9,7 @@ export default function Main({ search, play }) {
   const [showMeaning, setShowMeaning] = useState(false);
   const [displayPlay, setDisplayPlay] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error,setError] = useState("")
+  const [error,setError] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -17,7 +17,6 @@ export default function Main({ search, play }) {
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`
       );
-     
      setData(response.data[0])
      setLoading(false)
      setInputValue("")
@@ -26,10 +25,12 @@ export default function Main({ search, play }) {
       setDisplayPlay(true);
       //   console.log(data.word)
     } catch (error) {
-      setError(error)
+      setError(true)
       setInputValue("")
       setLoading(false)
+     
     }
+    
   };
 
   function handleClick(e) {
@@ -68,7 +69,7 @@ export default function Main({ search, play }) {
           <img src={search} alt="" />
         </button>
       </form>
-          {error ? <h1>Not found pls try again </h1>:
+
       <div className="my-5">
         <div className="flex justify-between">
           <h1 className="text-5xl">{data.word}</h1>
@@ -83,7 +84,6 @@ export default function Main({ search, play }) {
           </div>
         )}
       </div>
-}
       {showMeaning && <h3>Meanings</h3>}
       {data.meanings &&
         data.meanings.slice(0, 2).map((meaning, index) => (
