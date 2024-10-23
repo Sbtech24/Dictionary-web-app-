@@ -7,12 +7,13 @@ import { ThemeContext } from "./ThemeContext"
 
 
 export default function Header({logo,arrow,moon}){
+   
     const {toggleTheme} = useContext(ThemeContext)
     return(
         <header className="pb-5 mt-3">
             <div className="flex justify-between items-center ">
         <div>
-            <img src={logo} alt="" />
+             <img src={logo} alt="" className="" />
         </div>
         <div className="flex items-center justify-around gap-16">
             {/* <div>

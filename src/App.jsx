@@ -16,7 +16,7 @@ function App() {
   return (
     <>
     
-    <div className='container'>
+    <div className='App-container'>
      <Header logo={logo} arrow={arrow} moon={moon} />
      <Main search={search} play={play}/>
      </div>
